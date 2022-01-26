@@ -22,12 +22,19 @@
     <form action="{{ route('usuarios.store') }}" method="POST">
         @csrf
         <div class="row">
+            
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Tipo:</strong>
-                    <input type="text" name="tipo" class="form-control" placeholder="Tipo de Empleado">
+                    <strong>Tipo</strong>
+                        <select class="form-control" name="tipo" id="tipo" required>
+                        <option>Tipo de Usuario</option>
+                            @foreach($tipo as $tip)
+                            <option value="{{$tip->id}}">{{$tip->tipo_usuario}}</option>
+                            @endforeach
+                        </select>
                 </div>
             </div>
+
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Nombre:</strong>

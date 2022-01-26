@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Usuario;
+use App\TipoUsuario;
 
 class userController extends Controller
 {
@@ -14,9 +15,18 @@ class userController extends Controller
      */
     public function index()
     {
+        $global = new userController;
         $usuarios = Usuario::All();
-        return view('usuarios.index', compact('usuarios'));
+        return view('usuarios.index', compact('usuarios','global'));
     }
+
+    // public function getNombreTipo($id)
+    // {
+    // $array = TipoUsuario::find($id);
+    // $value = array_get($array, 'tipo_usuario');
+    //     return $value;
+    // }
+
 
     /**
      * Show the form for creating a new resource.
@@ -25,8 +35,10 @@ class userController extends Controller
      */
     public function create()
     {
-        return view('usuarios.create');
+        $tipo = TipoUsuario::All();
+        return view('usuarios.create', compact('tipo'));
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -67,7 +79,8 @@ class userController extends Controller
      */
     public function edit(Usuario $usuario)
     {
-        return view('usuarios.edit',compact('usuario'));
+        $tipo = TipoUsuario::All();
+        return view('usuarios.edit',compact('usuario','tipo'));
     }
 
     /**

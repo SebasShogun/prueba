@@ -29,6 +29,7 @@
                 <tr>
                     <td>{{$usuario->id}}</td>
                     <td>{{$usuario->tipo}}</td>
+                    <!-- <td>{{$usuario->tipo}}</td> -->
                     <td>{{$usuario->nombre}}</td>
                     <td>{{$usuario->apellido}}</td>
                     <td>{{$usuario->email}}</td>
