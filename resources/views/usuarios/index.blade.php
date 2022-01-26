@@ -28,8 +28,8 @@
                 @foreach ($usuarios as $usuario)
                 <tr>
                     <td>{{$usuario->id}}</td>
-                    <td>{{$usuario->tipo}}</td>
-                    <!-- <td>{{$usuario->tipo}}</td> -->
+                    <td>{{$usuario->tipo}}</td> 
+                    <!-- Aqui queria usar la variable global para poder convertir el numero con el campo tipo_usuario de la tabla -->
                     <td>{{$usuario->nombre}}</td>
                     <td>{{$usuario->apellido}}</td>
                     <td>{{$usuario->email}}</td>
