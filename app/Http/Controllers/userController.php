@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use App\Usuario;
 use App\TipoUsuario;
 
@@ -20,12 +21,14 @@ class userController extends Controller
         return view('usuarios.index', compact('usuarios','global'));
     }
 
-    // public function getNombreTipo($id)
-    // {
-    // $array = TipoUsuario::find($id);
-    // $value = array_get($array, 'tipo_usuario');
-    //     return $value;
-    // }
+    // Intente hacer una función para captar el nombre del tipo de empleado
+
+    public function getTipo($idusuario)
+    {
+        $nombreTipo = TipoUsuario::find($idusuario);
+        $value = Arr::get($nombreTipo, 'tipo_usuario');
+        return $value;
+    }
 
 
     /**

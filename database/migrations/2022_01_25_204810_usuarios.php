@@ -33,5 +33,6 @@ class Usuarios extends Migration
     {
         //
         Schema::dropIfExists('Usuarios');
+        Schema::enableForeignKeyConstraints();
     }
 }
