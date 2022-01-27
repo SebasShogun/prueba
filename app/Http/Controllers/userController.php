@@ -21,7 +21,8 @@ class userController extends Controller
         return view('usuarios.index', compact('usuarios','global'));
     }
 
-    // Intente hacer una función para captar el nombre del tipo de empleado
+    // Función para obtener el nombre de Tipo de Usuario de la Tabla tipo_usuario
+    // Se necesitó del use SupportArr en la linea 6
 
     public function getTipo($idusuario)
     {
@@ -29,7 +30,6 @@ class userController extends Controller
         $value = Arr::get($nombreTipo, 'tipo_usuario');
         return $value;
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -41,8 +41,6 @@ class userController extends Controller
         $tipo = TipoUsuario::All();
         return view('usuarios.create', compact('tipo'));
     }
-
-
     /**
      * Store a newly created resource in storage.
      *
